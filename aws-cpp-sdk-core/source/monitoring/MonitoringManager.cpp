@@ -124,6 +124,16 @@ namespace Aws
                 s_monitors->emplace_back(std::move(instance));
             }
         }
+
+        void CleanupMonitoring()
+        {
+            if (!s_monitors)
+            {
+                return;
+            }
+
+            s_monitors = nullptr;
+        }
     } // namespace Monitoring
 
 } // namespace Aws
